@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анимация машинки</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #87CEEB; 
+        }
+
+        .car {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 50%; 
+            transform: translateY(-50%);
+            animation: drive 25s linear infinite;
+        }
+
+        .body {
+            width: 100px;
+            height: 40px;
+            background-color: rgb(255, 0, 0); 
+            border-radius: 10px 10px 0 0; 
+            position: relative;
+        }
+
+        .window {
+            width: 50px;
+            height: 20px;
+            background-color: rgb(0, 191, 255); 
+            border-radius: 5px;
+            position: absolute;
+            top: 5px;
+            left: 25px;
+        }
+
+        .wheel {
+            width: 20px;
+            height: 20px;
+            background-color: rgb(255, 0, 191); 
+            border-radius: 50%; 
+            position: absolute;
+            bottom: -10px; 
+        }
+
+        .wheel.left {
+            left: 10px; 
+        }
+
+        .wheel.right {
+            right: 10px; 
+        }
+
+        @keyframes drive {
+            from {
+                left: 0px; 
+            }
+            to {
+                left: 100%; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="car">
+    <div class="body">
+        <div class="window"></div>
+        <div class="wheel left"></div>
+        <div class="wheel right"></div>
+    </div>
+</div>
+
+</body>
+</html>
